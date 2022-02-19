@@ -1,0 +1,85 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.tututner"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+11-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:5:5-71
+11-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:5:22-68
+12
+13    <application
+13-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:7:5-28:19
+14        android:allowBackup="true"
+14-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:8:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.7.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\9b4bbe17406ebdd5cecd894aeda4ed80\core-1.7.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:9:9-43
+18        android:label="@string/app_name"
+18-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:10:9-41
+19        android:supportsRtl="true"
+19-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:11:9-35
+20        android:theme="@style/AppThemeLight" >
+20-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:12:9-45
+21        <activity android:name="com.andryr.guitartuner.TunerActivity" >
+21-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:13:9-19:20
+21-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:13:19-48
+22            <intent-filter>
+22-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:14:13-18:29
+23                <action android:name="android.intent.action.MAIN" />
+23-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:15:17-68
+23-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:15:25-66
+24
+25                <category android:name="android.intent.category.LAUNCHER" />
+25-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:17:17-76
+25-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:17:27-74
+26            </intent-filter>
+27        </activity>
+28        <activity
+28-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:20:9-27:20
+29            android:name="com.andryr.guitartuner.SettingsActivity"
+29-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:21:13-45
+30            android:label="@string/title_activity_settings"
+30-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:22:13-60
+31            android:parentActivityName="com.andryr.guitartuner.TunerActivity" >
+31-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:23:13-56
+32            <meta-data
+32-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:24:13-26:49
+33                android:name="android.support.PARENT_ACTIVITY"
+33-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:25:17-63
+34                android:value=".TunerActivity" />
+34-->E:\AndrSP\tututner\app\src\main\AndroidManifest.xml:26:17-47
+35        </activity>
+36
+37        <provider
+37-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+38            android:name="androidx.startup.InitializationProvider"
+38-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+39            android:authorities="com.example.tututner.androidx-startup"
+39-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+40            android:exported="false" >
+40-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+41            <meta-data
+41-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+42                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+42-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+43                android:value="androidx.startup" />
+43-->[androidx.emoji2:emoji2:1.0.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\51c794e8d58f2add1b6e1035ee7c058d\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+44            <meta-data
+44-->[androidx.lifecycle:lifecycle-process:2.4.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\e539e26c730ec8f29e3c4a27f918073b\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+45                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+45-->[androidx.lifecycle:lifecycle-process:2.4.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\e539e26c730ec8f29e3c4a27f918073b\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+46                android:value="androidx.startup" />
+46-->[androidx.lifecycle:lifecycle-process:2.4.0] E:\AndrSP\guitar-tuner-master\.gradle\caches\transforms-2\files-2.1\e539e26c730ec8f29e3c4a27f918073b\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+47        </provider>
+48    </application>
+49
+50</manifest>

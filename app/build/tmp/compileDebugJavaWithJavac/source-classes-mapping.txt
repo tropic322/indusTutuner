@@ -1,0 +1,35 @@
+com/andryr/guitartuner/SettingsActivity.java
+ com.andryr.guitartuner.SettingsActivity
+ com.andryr.guitartuner.SettingsActivity$1
+com/andryr/guitartuner/BuildConfig.java
+ com.andryr.guitartuner.BuildConfig
+com/andryr/guitartuner/DialogUtils.java
+ com.andryr.guitartuner.DialogUtils
+com/andryr/guitartuner/NeedleView.java
+ com.andryr.guitartuner.NeedleView
+ com.andryr.guitartuner.NeedleView$1
+com/andryr/guitartuner/AudioProcessor.java
+ com.andryr.guitartuner.AudioProcessor
+ com.andryr.guitartuner.AudioProcessor$PitchDetectionListener
+com/andryr/guitartuner/Preferences.java
+ com.andryr.guitartuner.Preferences
+com/andryr/guitartuner/AppCompatPreferenceActivity.java
+ com.andryr.guitartuner.AppCompatPreferenceActivity
+com/andryr/guitartuner/TunerActivity.java
+ com.andryr.guitartuner.TunerActivity
+ com.andryr.guitartuner.TunerActivity$1
+ com.andryr.guitartuner.TunerActivity$2
+ com.andryr.guitartuner.TunerActivity$2$1
+com/andryr/guitartuner/Utils.java
+ com.andryr.guitartuner.Utils
+ com.andryr.guitartuner.Utils$1
+ com.andryr.guitartuner.Utils$2
+com/andryr/guitartuner/NavUtils.java
+ com.andryr.guitartuner.NavUtils
+com/andryr/guitartuner/Pitch.java
+ com.andryr.guitartuner.Pitch
+com/andryr/guitartuner/Tuning.java
+ com.andryr.guitartuner.Tuning
+com/andryr/guitartuner/TuningView.java
+ com.andryr.guitartuner.TuningView
+ com.andryr.guitartuner.TuningView$1

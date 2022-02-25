@@ -2344,7 +2344,6 @@ dimen mtrl_tooltip_minHeight
 dimen mtrl_tooltip_minWidth
 dimen mtrl_tooltip_padding
 dimen mtrl_transition_shared_axis_slide_distance
-dimen needle_view_needle_width
 dimen needle_view_stroke_width
 dimen needle_view_tick_label_text_size
 dimen needle_view_ticks_margin_top

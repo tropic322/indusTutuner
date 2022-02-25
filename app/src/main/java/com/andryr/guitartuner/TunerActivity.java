@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TunerActivity extends AppCompatActivity {
 
-    private static final String TAG = TunerActivity.class.getCanonicalName();
+    private static final String TAG = TunerActivity.class.getCanonicalName();//мусор?
 
     public static final String STATE_NEEDLE_POS = "needle_pos";
     public static final String STATE_PITCH_INDEX = "pitch_index";
@@ -37,9 +37,9 @@ public class TunerActivity extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_RECORD_AUDIO = 443;
 
 
-    private Tuning mTuning;
-    private AudioProcessor mAudioProcessor;
-    private ExecutorService mExecutor = Executors.newSingleThreadExecutor();
+    private Tuning mTuning;// m - бесполезная хуета рекомендованная гуглом
+    private AudioProcessor mAudioProcessor;//?
+    private ExecutorService mExecutor = Executors.newSingleThreadExecutor();// ?
     private NeedleView mNeedleView;
     private TuningView mTuningView;
     private TextView mFrequencyView;
@@ -124,7 +124,7 @@ public class TunerActivity extends AppCompatActivity {
             @Override
             public void onPitchDetected(final float freq, double avgIntensity) {
 
-                final int index = mTuning.closestPitchIndex(freq);
+                final int index = mTuning.closestPitchIndex(freq); //определяет индекс тона
                 final Pitch pitch = mTuning.pitches[index];
                 double interval = 1200 * Utils.log2(freq / pitch.frequency); // interval in cents
                 final float needlePos = (float) (interval / 100);
@@ -174,8 +174,8 @@ public class TunerActivity extends AppCompatActivity {
         Utils.setupActivityTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        mTuning = Tuning.getTuning(this, Preferences.getString(this, getString(R.string.pref_tuning_key), getString(R.string.standard_tuning_val)));
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//сохроняет экран включенным
+        mTuning = Tuning.getTuning(this, Preferences.getString(this, getString(R.string.pref_tuning_key), getString(R.string.standard_tuning_val)));//инициализация тюнинга, в зависимости от выбранного строя
 
         mNeedleView = (NeedleView) findViewById(R.id.pitch_needle_view);
         mNeedleView.setTickLabel(-1.0F, "-100c");

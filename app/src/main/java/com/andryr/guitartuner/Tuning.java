@@ -8,15 +8,15 @@ import java.lang.ref.PhantomReference;
 
 
 public class Tuning {
-    String name;
-    Pitch[] pitches;
+    String name;// имя строя
+    Pitch[] pitches;// технические данные для настройки (частоты и название ноты)
 
     public Tuning(String name, Pitch[] pitches) {
         this.name = name;
         this.pitches = pitches;
     }
 
-    public Pitch closestPitch(float freq) {
+    public Pitch closestPitch(float freq) {//мусор ?
         Pitch closest = null;
         float dist = Float.MAX_VALUE;
         for (Pitch pitch : pitches) {
@@ -29,7 +29,7 @@ public class Tuning {
         return closest;
     }
 
-    public int closestPitchIndex(float freq) {
+    public int closestPitchIndex(float freq) {//скорее всего подсчет частоты
         int index = -1;
         float dist = Float.MAX_VALUE;
         for (int i = 0; i < pitches.length; i++) {
@@ -43,8 +43,8 @@ public class Tuning {
         return index;
     }
 
-    public static Tuning getTuning(Context context, String name) {
-        if (name.equals(context.getString(R.string.standard_tuning_val))) {
+    public static Tuning getTuning(Context context, String name) {//выделить один метод для изменения, вынести блоки питчей в другйо класс
+        if (name.equals(context.getString(R.string.standard_tuning_val))) {//здесь можно использовать map
             return new Tuning(name,
                     new Pitch[]{
                             new Pitch(82.41F, "E"),

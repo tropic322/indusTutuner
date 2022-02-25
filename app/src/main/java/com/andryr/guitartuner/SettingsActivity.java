@@ -6,15 +6,15 @@ package com.andryr.guitartuner;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
+
 import androidx.core.app.NavUtils;
 import androidx.appcompat.app.ActionBar;
 import android.view.MenuItem;
 
-public class SettingsActivity extends AppCompatPreferenceActivity {
+public class SettingsActivity extends AppCompatPreferenceActivity {//подлежит удалению
 
 
-    private boolean mShouldRestart = false;
+    private boolean mShouldRestart = false;//?
 
     private SharedPreferences.OnSharedPreferenceChangeListener mOnPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override

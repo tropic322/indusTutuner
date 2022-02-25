@@ -1,18 +1,4 @@
-/*
- * Copyright 2016 andryr
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 
 package com.andryr.guitartuner;
 
@@ -30,10 +16,8 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by andry on 22/04/16.
- */
-public class NeedleView extends View {
+
+public class NeedleView extends View {//класс отображения анимаций указателя
 
 
     private double mAngle;
@@ -69,13 +53,16 @@ public class NeedleView extends View {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         mPaint = new Paint();
-        mPaint.setAntiAlias(true);
+        mPaint.setAntiAlias(true);//субпиксельное сглаживание
+        //различные настройки указателя
         mTextStrokeWidth = mPaint.getStrokeWidth();
-        mStrokeWidth = getResources().getDimension(R.dimen.needle_view_stroke_width);
-        mArcOffset = getResources().getDimension(R.dimen.needle_view_ticks_margin_top);
+        //<dimen name="needle_view_needle_width">100dp</dimen>
+        mStrokeWidth = getResources().getDimension(R.dimen.needle_view_stroke_width); //толщина делений на табло
+        mArcOffset = getResources().getDimension(R.dimen.needle_view_ticks_margin_top); //расстояние до табло нот
         mTickLabelTextSize = getResources().getDimension(R.dimen.needle_view_tick_label_text_size);
-        mTickLength = Utils.dpToPixels(context, 5);
-        setTipPos(0);
+        mTickLength = Utils.dpToPixels(context, 5); //?
+
+        setTipPos(0);//?
 
         final TypedArray array = context.obtainStyledAttributes( attrs,
                 R.styleable.NeedleView, defStyleAttr,
@@ -93,7 +80,7 @@ public class NeedleView extends View {
     }
 
 
-    public void animateTip(float toPos) {
+    public void animateTip(float toPos) {//анимация указателя
 
         toPos = Math.min(1.0F, Math.max(-1.0F, toPos));
         int width = getWidth() - getPaddingLeft() - getPaddingRight();
@@ -113,7 +100,7 @@ public class NeedleView extends View {
                 invalidate();
             }
         });
-        animator.setDuration(200);
+        animator.setDuration(200);//скорость изменения положения указателя
         animator.start();
     }
 
@@ -123,8 +110,8 @@ public class NeedleView extends View {
 
     public void setTipPos(float pos) {
         mTipPosition = Math.min(1.0F, Math.max(-1.0F, pos));
-        int width = getWidth() - getPaddingLeft() - getPaddingRight();
-        int height = getHeight() - getPaddingTop() - getPaddingBottom();
+        int width = getWidth() - getPaddingLeft() - getPaddingRight();//итоговая ширина табло
+        int height = getHeight() - getPaddingTop() - getPaddingBottom();//итоговая высота
         if(height > width/2f)
             mAngle = 90 + pos * (90 - Math.toDegrees(Math.acos(((width) / 2.0F - mStrokeWidth) / height)));
         else

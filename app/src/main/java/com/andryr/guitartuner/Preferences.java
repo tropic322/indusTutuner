@@ -16,7 +16,7 @@ public class Preferences {
         return getPreferences(context).getBoolean(key, defaultValue);
     }
 
-    public static String getString(Context context, String key, String defaultValue) {
+    public static String getString(Context context, String key, String defaultValue) {//получается какие то значения в зависимости от настроек, используется для имени строя
         return getPreferences(context).getString(key, defaultValue);
     }
 }

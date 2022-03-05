@@ -8,17 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fceea54f-aea6-4da2-b9a2-c72bec16d2a3" name="Default Changelist" comment="comments 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/andryr/guitartuner/NeedleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/andryr/guitartuner/NeedleView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/andryr/guitartuner/TuningView.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/andryr/guitartuner/TuningView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/andryr/guitartuner/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/andryr/guitartuner/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/AudioProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/AudioProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/DialogUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/DialogUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/NavUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/NavUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/NeedleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/NeedleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/TunerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/TunerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/Tuning.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/Tuning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/TuningView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/TuningView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/andryr/guitartuner/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +41,7 @@
     <property name="android-custom-viewE:/AndrSP/tututner/app/src/main/java/com/andryr/guitartuner/NeedleView.java_SELECTED" value="NeedleView" />
     <property name="android-custom-viewE:/AndrSP/tututner/app/src/main/java/com/andryr/guitartuner/TuningView.java_SELECTED" value="TuningView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../337/MyguitarClass-test_second" />
     <property name="multi-representation-previewE:/AndrSP/tututner/app/src/main/java/com/andryr/guitartuner/NeedleView.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/AndrSP/tututner/app/src/main/java/com/andryr/guitartuner/TuningView.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -159,6 +151,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="467" y="73" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1645821640430" />
+    <state x="620" y="259" key="FileChooserDialogImpl" timestamp="1646506531057">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="259" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1646506531057" />
     <state width="1636" height="267" key="GridCell.Tab.0.bottom" timestamp="1645804861989">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

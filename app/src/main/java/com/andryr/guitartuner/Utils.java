@@ -41,18 +41,6 @@ public class Utils {
     }
 
 
-    public static void scrollToPosition(RecyclerView recyclerView, int position) {
-        LinearLayoutManager lm = (LinearLayoutManager) recyclerView.getLayoutManager();
-        int recyclerWidth = recyclerView.getWidth();
-
-
-        View itemView = lm.findViewByPosition(position);
-        if (itemView != null) {
-            int viewWidth = itemView.getWidth();
-            lm.scrollToPositionWithOffset(position, -(recyclerWidth - viewWidth) / 2);
-        }
-    }
-
     public static void reveal(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // get the center for the clipping circle

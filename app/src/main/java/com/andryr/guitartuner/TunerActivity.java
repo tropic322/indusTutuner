@@ -37,10 +37,10 @@ public class TunerActivity extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_RECORD_AUDIO = 443;
 
 
-    private Tuning mTuning;// m - бесполезная хуета рекомендованная гуглом
+    private Tuning mTuning;// m - бесполезная вещь рекомендованная гуглом
     private AudioProcessor mAudioProcessor;//?
-    private ExecutorService mExecutor = Executors.newSingleThreadExecutor();// ?
-    private NeedleView mNeedleView;
+    private ExecutorService mExecutor = Executors.newSingleThreadExecutor();// потока для записи звука
+    private NeedleView mNeedleView; //указатель
     private TuningView mTuningView;
     private TextView mFrequencyView;
 
@@ -118,7 +118,7 @@ public class TunerActivity extends AppCompatActivity {
             return;
 
 
-        mAudioProcessor = new AudioProcessor();
+        mAudioProcessor = new AudioProcessor(); //проверить можно ли объединить init с конструктором
         mAudioProcessor.init();
         mAudioProcessor.setPitchDetectionListener(new AudioProcessor.PitchDetectionListener() {
             @Override
@@ -126,24 +126,24 @@ public class TunerActivity extends AppCompatActivity {
 
                 final int index = mTuning.closestPitchIndex(freq); //определяет индекс тона
                 final Pitch pitch = mTuning.pitches[index];
-                double interval = 1200 * Utils.log2(freq / pitch.frequency); // interval in cents
+                double interval = 1200 * Utils.log2(freq / pitch.frequency); // преобразование герцев в центы
                 final float needlePos = (float) (interval / 100);
-                final boolean goodPitch = Math.abs(interval) < 5.0;
+                final boolean goodPitch = Math.abs(interval) < 5.0; //вспомогательная переменная для отображения галочки
                 runOnUiThread(new Runnable() {
                     @SuppressLint("DefaultLocale")
                     @Override
                     public void run() {
                         mTuningView.setSelectedIndex(index, true);
-                        mNeedleView.setTickLabel(0.0F, String.format("%.02fHz", pitch.frequency));
+                        mNeedleView.setTickLabel(0.0F, String.format("%.02fHz", pitch.frequency));// вывод частоты записи
                         mNeedleView.animateTip(needlePos);
                         mFrequencyView.setText(String.format("%.02fHz", freq));
 
 
-                        final View goodPitchView = findViewById(R.id.good_pitch_view);
+                        final View goodPitchView = findViewById(R.id.good_pitch_view);//переделать
                         if (goodPitchView != null) {
                             if (goodPitch) {
                                 if (goodPitchView.getVisibility() != View.VISIBLE) {
-                                    Utils.reveal(goodPitchView);
+                                    Utils.reveal(goodPitchView);//отображаем или не отображаем галочку
                                 }
                             } else if (goodPitchView.getVisibility() == View.VISIBLE) {
                                 Utils.hide(goodPitchView);
@@ -158,7 +158,7 @@ public class TunerActivity extends AppCompatActivity {
             }
         });
         mProcessing = true;
-        mExecutor.execute(mAudioProcessor);
+        mExecutor.execute(mAudioProcessor);// старт отдельного потока для записи звука
     }
 
 
@@ -177,7 +177,7 @@ public class TunerActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//сохроняет экран включенным
         mTuning = Tuning.getTuning(this, Preferences.getString(this, getString(R.string.pref_tuning_key), getString(R.string.standard_tuning_val)));//инициализация тюнинга, в зависимости от выбранного строя
 
-        mNeedleView = (NeedleView) findViewById(R.id.pitch_needle_view);
+        mNeedleView = (NeedleView) findViewById(R.id.pitch_needle_view);//насйтрока отображения указателя
         mNeedleView.setTickLabel(-1.0F, "-100c");
         mNeedleView.setTickLabel(0.0F, String.format("%.02fHz", mTuning.pitches[0].frequency));
         mNeedleView.setTickLabel(1.0F, "+100c");
@@ -191,20 +191,20 @@ public class TunerActivity extends AppCompatActivity {
         mFrequencyView = (TextView) findViewById(R.id.frequency_view);
         mFrequencyView.setText(String.format("%.02fHz", mTuning.pitches[0].frequency));
 
-        ImageView goodPitchView = (ImageView) findViewById(R.id.good_pitch_view);
+        ImageView goodPitchView = (ImageView) findViewById(R.id.good_pitch_view);//галочка
         goodPitchView.setColorFilter(primaryTextColor);
-        requestPermissions();
+        requestPermissions();//удалить?
 
     }
-
-    @Override
+    //бесполезный мусор
+    /*@Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putFloat(STATE_NEEDLE_POS, mNeedleView.getTipPos());
         outState.putInt(STATE_PITCH_INDEX, mPitchIndex);
         outState.putFloat(STATE_LAST_FREQ, mLastFreq);
         super.onSaveInstanceState(outState);
     }
-
+    //бесполезный мусор
     @SuppressLint("DefaultLocale")
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -214,9 +214,9 @@ public class TunerActivity extends AppCompatActivity {
         mNeedleView.setTickLabel(0.0F, String.format("%.02fHz", mTuning.pitches[pitchIndex].frequency));
         mTuningView.setSelectedIndex(pitchIndex);
         mFrequencyView.setText(String.format("%.02fHz", savedInstanceState.getFloat(STATE_LAST_FREQ)));
-    }
+    }*/
 
-
+    //настройки нужно будет перенести
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -226,7 +226,7 @@ public class TunerActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    //убрать
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

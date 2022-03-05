@@ -49,9 +49,6 @@ public class TuningView extends View {
         array.recycle();
     }
 
-    public int getSelectedIndex() {
-        return mSelectedIndex;
-    }
 
     public void setSelectedIndex(int selectedIndex, boolean animate) {
         if (selectedIndex == mSelectedIndex)
@@ -93,44 +90,8 @@ public class TuningView extends View {
         mOffset = (w - mTuningItemWidth) / 2f - mSelectedIndex * mTuningItemWidth;
     }
 
-    public float getTextSize() {
-        return mPaint.getTextSize();
-    }
-
-    public void setTextSize(float textSize) {
-        mPaint.setTextSize(textSize);
-    }
-
-    public int getNormalTextColor() {
-        return mNormalTextColor;
-    }
-
-    public void setNormalTextColor(int color) {
-        mNormalTextColor = color;
-    }
-
-    public int getSelectedTextColor() {
-        return mSelectedTextColor;
-    }
-
-    public void setSelectedTextColor(int selectedTextColor) {
-        mSelectedTextColor = selectedTextColor;
-    }
-
-    public Tuning getTuning() {
-        return mTuning;
-    }
-
     public void setTuning(Tuning tuning) {
         mTuning = tuning;
-    }
-
-    public float getTuningItemWidth() {
-        return mTuningItemWidth;
-    }
-
-    public void setTuningItemWidth(float tuningItemWidth) {
-        mTuningItemWidth = tuningItemWidth;
     }
 
     @Override

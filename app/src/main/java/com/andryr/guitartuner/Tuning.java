@@ -16,18 +16,6 @@ public class Tuning {
         this.pitches = pitches;
     }
 
-    public Pitch closestPitch(float freq) {//мусор ?
-        Pitch closest = null;
-        float dist = Float.MAX_VALUE;
-        for (Pitch pitch : pitches) {
-            float d = Math.abs(freq - pitch.frequency);
-            if (d < dist) {
-                closest = pitch;
-                dist = d;
-            }
-        }
-        return closest;
-    }
 
     public int closestPitchIndex(float freq) {//скорее всего подсчет частоты
         int index = -1;

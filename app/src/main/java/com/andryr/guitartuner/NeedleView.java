@@ -25,7 +25,7 @@ public class NeedleView extends View {//класс отображения ани
     private float mStrokeWidth;
     private float mTextStrokeWidth;
     private float mTickLabelTextSize;
-    private Matrix mRotateMatrix;
+
     private float mArcOffset;
     private float mTickLength;
     private int mNeedleColor;
@@ -34,7 +34,6 @@ public class NeedleView extends View {//класс отображения ани
     private int mTextColor;
     private Map<Float, String> mTickLabels = new HashMap<>();
     private float mTipPosition;
-    private float mTipPos;
 
 
     public NeedleView(Context context) {
@@ -56,7 +55,6 @@ public class NeedleView extends View {//класс отображения ани
         mPaint.setAntiAlias(true);//субпиксельное сглаживание
         //различные настройки указателя
         mTextStrokeWidth = mPaint.getStrokeWidth();
-        //<dimen name="needle_view_needle_width">100dp</dimen>
         mStrokeWidth = getResources().getDimension(R.dimen.needle_view_stroke_width); //толщина делений на табло
         mArcOffset = getResources().getDimension(R.dimen.needle_view_ticks_margin_top); //расстояние до табло нот
         mTickLabelTextSize = getResources().getDimension(R.dimen.needle_view_tick_label_text_size);
@@ -75,9 +73,7 @@ public class NeedleView extends View {//класс отображения ани
 
     }
 
-    public double getAngle() {
-        return mAngle;
-    }
+
 
 
     public void animateTip(float toPos) {//анимация указателя
@@ -104,9 +100,7 @@ public class NeedleView extends View {//класс отображения ани
         animator.start();
     }
 
-    public float getTipPos() {
-        return mTipPos;
-    }
+
 
     public void setTipPos(float pos) {
         mTipPosition = Math.min(1.0F, Math.max(-1.0F, pos));
@@ -123,9 +117,6 @@ public class NeedleView extends View {//класс отображения ани
         mTickLabels.put(pos, label);
     }
 
-    public void removeTickLabel(float pos) {
-        mTickLabels.remove(pos);
-    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -137,12 +128,11 @@ public class NeedleView extends View {//класс отображения ани
         drawTickLabels(canvas, width, height);
         float tickLabelHeight = mPaint.descent() - mPaint.ascent();
 
-        // drawArc(canvas, needleLength, width, height);
         drawTicks(canvas, width, height, tickLabelHeight);
         drawNeedle(canvas, width, height, tickLabelHeight);
     }
 
-    private void drawTickLabels(Canvas canvas, int width, int height) {
+    private void drawTickLabels(Canvas canvas, int width, int height) {// рисует частоту
         float cx = width / 2.0F + getPaddingLeft();
         float cy = height + getPaddingTop();
         mPaint.setColor(mTextColor);
@@ -169,17 +159,6 @@ public class NeedleView extends View {//класс отображения ани
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void drawArc(Canvas canvas, float needleLength, int width, int height) {
-        int hPadding = getPaddingLeft() + getPaddingRight();
-        float arcLeft = -(needleLength - width / 2.0F);
-        float arcRight = width + (needleLength - width / 2.0F);
-        float arcTop = height - needleLength - getPaddingBottom() - mArcOffset;
-        float arcBottom = arcTop + (needleLength * 2);
-        float offsetAngle = (float) Math.toDegrees(Math.acos((width - hPadding) / 2.0F - mStrokeWidth) / needleLength);
-
-        canvas.drawArc(arcLeft, arcTop, arcRight, arcBottom, 180 + offsetAngle, 180 - 2 * offsetAngle, false, mPaint);
-    }
 
     private void drawNeedle(Canvas canvas, int width, int height, float tickLabelHeight) {
         mPaint.setStrokeWidth(mStrokeWidth);
